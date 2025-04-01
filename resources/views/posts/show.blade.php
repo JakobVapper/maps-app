@@ -54,6 +54,54 @@
                             </form>
                         </div>
                     @endcan
+
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4">Comments</h3>
+                        
+                        @auth
+                            <form action="{{ route('comments.store', $post) }}" method="POST" class="mb-6">
+                                @csrf
+                                <div class="mb-4">
+                                    <label for="content" class="block text-gray-700 mb-2">Add a comment</label>
+                                    <textarea id="content" name="content" rows="3" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block w-full" required></textarea>
+                                    <x-input-error :messages="$errors->get('content')" class="mt-2" />
+                                </div>
+                                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                                    {{ __('Submit Comment') }}
+                                </button>
+                            </form>
+                        @else
+                            <div class="mb-6 p-4 bg-gray-100 rounded">
+                                <p class="text-gray-700">Please <a href="{{ route('login') }}" class="text-blue-500 hover:underline">login</a> to leave a comment.</p>
+                            </div>
+                        @endauth
+                        
+                        <div class="space-y-4">
+                            @forelse ($post->comments as $comment)
+                                <div class="bg-gray-50 p-4 rounded shadow-sm">
+                                    <div class="flex justify-between">
+                                        <div class="font-medium text-gray-800">{{ $comment->user->name }}</div>
+                                        <div class="text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</div>
+                                    </div>
+                                    <div class="mt-2 text-gray-700">{{ $comment->content }}</div>
+                                    
+                                    @can('delete', $comment)
+                                        <div class="mt-2 text-right">
+                                            <form action="{{ route('comments.destroy', $comment) }}" method="POST" class="inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-500 text-sm hover:underline" onclick="return confirm('Are you sure you want to delete this comment?')">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @endcan
+                                </div>
+                            @empty
+                                <p class="text-gray-500">No comments yet.</p>
+                            @endforelse
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
