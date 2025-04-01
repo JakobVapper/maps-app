@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarkerController;
+use App\Http\Controllers\WeatherController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,3 +14,5 @@ Route::get('/markers/all', [MarkerController::class, 'show'])->name('markers.sho
 Route::put('/markers/{marker}', [MarkerController::class, 'update'])->name('markers.update');
 Route::post('/markers/{marker}', [MarkerController::class, 'update']);
 Route::delete('/markers/{marker}', [MarkerController::class, 'destroy'])->name('markers.destroy');
+
+Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);

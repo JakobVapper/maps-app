@@ -32,6 +32,11 @@ return [
         'key' => env('RADAR_PUBLISHER_KEY'),
     ],
 
+    'openweather' => [
+        'key' => env('OPEN_WEATHER_MAP_API_KEY'),
+        'url' => 'https://api.openweathermap.org/data/2.5/weather',
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
