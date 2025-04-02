@@ -1,0 +1,122 @@
+/* Dark Theme for Admin Pages */
+body {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+.bg-white {
+    background-color: #1a1a1a !important;
+}
+
+.bg-gray-100 {
+    background-color: #0f0f0f !important;
+}
+
+.shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bg-indigo-800 {
+    background-color: #121212 !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+/* Text colors */
+.text-gray-800, .text-gray-900 {
+    color: #ffffff !important;
+}
+
+.text-gray-600, .text-gray-700, .text-gray-500 {
+    color: #aaaaaa !important;
+}
+
+.text-indigo-600 {
+    color: #FFD700 !important;
+}
+
+.text-indigo-200 {
+    color: #999999 !important;
+}
+
+/* Forms and inputs */
+input, textarea, select {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border-color: #333 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2) !important;
+}
+
+/* Tables */
+.bg-gray-50 {
+    background-color: #1a1a1a !important;
+}
+
+table {
+    border-color: #333 !important;
+}
+
+th {
+    color: #FFD700 !important;
+    background-color: #222222 !important;
+}
+
+tr {
+    border-color: #333 !important;
+}
+
+/* Accent colors and buttons */
+.text-blue-600, .text-red-600 {
+    color: #FFD700 !important;
+}
+
+.border-indigo-500, .focus\:border-indigo-500 {
+    border-color: #FFD700 !important;
+}
+
+.focus\:ring-indigo-500 {
+    --tw-ring-color: #FFD700 !important;
+}
+
+/* Success message */
+.bg-green-100 {
+    background-color: #222222 !important;
+    border-color: #FFD700 !important;
+}
+
+.text-green-700 {
+    color: #FFD700 !important;
+}
+
+/* Header and navigation */
+.border-b-2.border-white {
+    border-color: #FFD700 !important;
+}
+
+/* Buttons */
+.bg-gray-500 {
+    background-color: #333333 !important;
+}
+
+.hover\:bg-gray-600:hover {
+    background-color: #444444 !important;
+}
+
+/* Pagination */
+nav[aria-label="Pagination Navigation"] {
+    color: #FFD700 !important;
+}
+
+.relative.z-0.inline-flex.shadow-sm.rounded-md span, .relative.z-0.inline-flex.shadow-sm.rounded-md a {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #333 !important;
+}
+
+.relative.z-0.inline-flex.shadow-sm.rounded-md span[aria-current="page"] {
+    background-color: #333 !important;
+    color: #FFD700 !important;
+}

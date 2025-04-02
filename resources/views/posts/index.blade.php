@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight blog-header">
                 {{ __('Blog Posts') }}
             </h2>
             @auth
@@ -22,7 +22,7 @@
 
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 @forelse ($posts as $post)
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg post-card">
                         @if ($post->featured_image)
                             <div class="h-48 overflow-hidden">
                                 <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-full object-cover">

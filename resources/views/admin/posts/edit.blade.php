@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight page-header">
                 {{ __('Edit Post') }}
             </h2>
             <a href="{{ route('admin.posts.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
@@ -35,7 +35,7 @@
                 @if ($post->featured_image)
                     <div class="mb-4">
                         <p class="mb-2">Current Featured Image:</p>
-                        <img src="{{ asset('storage/' . $post->featured_image) }}" alt="Current Featured Image" class="h-48 object-contain">
+                        <img src="{{ asset('storage/' . $post->featured_image) }}" alt="Current Featured Image" class="h-48 object-contain border border-gray-300 rounded p-2">
                     </div>
                 @endif
 
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <x-primary-button>
+                    <x-primary-button class="btn-primary">
                         {{ __('Update Post') }}
                     </x-primary-button>
                 </div>

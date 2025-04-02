@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight blog-header">
                 {{ __('Create New Post') }}
             </h2>
             <a href="{{ route('posts.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
-                            <x-primary-button>
+                            <x-primary-button class="btn-primary">
                                 {{ __('Create Post') }}
                             </x-primary-button>
                         </div>

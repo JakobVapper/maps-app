@@ -10,9 +10,44 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
+        <!-- Custom Admin Theme -->
+        <link href="{{ asset('css/admin-theme.css') }}" rel="stylesheet">
+        
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .btn-primary {
+                background-color: #FFD700 !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0.5rem 1rem !important;
+                border-radius: 0.375rem !important;
+                font-weight: 500 !important;
+                transition: all 0.2s !important;
+            }
+            
+            .btn-primary:hover {
+                background-color: #FFC400 !important;
+                transform: translateY(-2px) !important;
+            }
+            
+            .page-header {
+                color: #FFD700 !important;
+                font-weight: 600 !important;
+            }
+            
+            table {
+                border-radius: 8px !important;
+                overflow: hidden !important;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
