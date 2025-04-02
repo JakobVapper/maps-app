@@ -10,6 +10,7 @@
                     </a>
                 </div>
 
+                /navigation.blade.php
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -19,6 +20,12 @@
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
                         {{ __('Blog') }}
                     </x-nav-link>
+                    
+                    @if (Auth::user()->isAdmin())
+                        <x-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.*')">
+                            {{ __('Admin Panel') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -78,6 +85,12 @@
             <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
                 {{ __('Blog') }}
             </x-responsive-nav-link>
+            
+            @if (Auth::user()->isAdmin())
+                <x-responsive-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.*')">
+                    {{ __('Admin Panel') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
