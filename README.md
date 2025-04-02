@@ -1,3 +1,5 @@
-weather: hajus.tak22vapper.itmajakas.ee/weather/london
+## 🔗 Live Links  
 
-maps: hajus.tak22vapper.itmajakas.ee/markers
+- 🌤️ **Weather Service**: https://hajus.tak22vapper.itmajakas.ee/weather/london
+- 🗺️ **Maps**: https://hajus.tak22vapper.itmajakas.ee/map 
+- 📝 **Blog**: https://hajus.tak22vapper.itmajakas.ee/posts
