@@ -20,7 +20,7 @@
                         {{ __('Blog') }}
                     </x-nav-link>
                     
-                    @if (Auth::user()->isAdmin())
+                    @if (Auth::user()->?isAdmin())
                         <x-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.*')">
                             {{ __('Admin Panel') }}
                         </x-nav-link>
