@@ -3,11 +3,11 @@
 @section('title', 'Shopping Cart')
 
 @section('content')
-    <h1 class="mb-4">Shopping Cart</h1>
+    <h1 class="mb-4"><i class="bi bi-cart3"></i> Shopping Cart</h1>
     
     @if(count($cart) > 0)
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Product</th>
@@ -22,7 +22,7 @@
                         <tr>
                             <td class="align-middle">
                                 <div class="d-flex align-items-center">
-                                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}" style="width: 60px; height: 60px; object-fit: cover;" class="me-3 rounded">
+                                    <img src="{{ asset($item['image']) }}" alt="{{ $item['name'] }}" style="width: 60px; height: 60px; object-fit: cover;" class="me-3 rounded">
                                     <span>{{ $item['name'] }}</span>
                                 </div>
                             </td>
@@ -40,9 +40,10 @@
                                 </form>
                             </td>
                             <td class="align-middle">${{ number_format($item['price'] * $item['quantity'], 2) }}</td>
-                            <!-- Replace the existing remove form with this link -->
                             <td class="align-middle">
-                                <a href="{{ route('cart.removeItem', $id) }}" class="btn btn-danger btn-sm">Remove</a>
+                                <a href="{{ route('cart.removeItem', $id) }}" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i> Remove
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -63,15 +64,18 @@
                     </a>
                 </div>
                 <a href="{{ route('checkout') }}" class="btn btn-success">
-                    Proceed to Checkout <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-credit-card"></i> Proceed to Checkout
                 </a>
             </div>
     @else
         <div class="text-center py-5">
+            <div class="mb-4">
+                <i class="bi bi-cart-x" style="font-size: 4rem; color: #666;"></i>
+            </div>
             <h3>Your cart is empty</h3>
             <p class="mb-4">Looks like you haven't added any products to your cart yet.</p>
             <a href="{{ route('shop.index') }}" class="btn btn-primary">
-                <i class="bi bi-cart-plus"></i> Browse Products
+                <i class="bi bi-grid-3x3-gap-fill"></i> Browse Products
             </a>
         </div>
     @endif

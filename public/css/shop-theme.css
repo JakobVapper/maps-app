@@ -1,0 +1,366 @@
+/* Dark Theme for E-commerce Shop Pages */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main containers */
+.container, .container-fluid {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #121212 !important;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #FFD700 !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+.cart-count {
+    background-color: #FFD700 !important;
+    color: #000 !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #FFD700 !important;
+    border-color: #FFD700 !important;
+    color: #000 !important;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFC400 !important;
+    border-color: #FFC400 !important;
+}
+
+.btn-success {
+    background-color: #FFD700 !important;
+    border-color: #FFD700 !important;
+    color: #000 !important;
+}
+
+.btn-success:hover {
+    background-color: #FFC400 !important;
+    border-color: #FFC400 !important;
+}
+
+.btn-outline-secondary {
+    border-color: #666 !important;
+    color: #ccc !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #333 !important;
+    color: #FFD700 !important;
+}
+
+.btn-danger {
+    background-color: #d32f2f !important;
+    border-color: #b71c1c !important;
+}
+
+/* Cards */
+.card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+}
+
+.card-header.bg-primary {
+    background-color: #121212 !important;
+    border-bottom: 2px solid #FFD700;
+    color: #FFD700 !important;
+}
+
+.card-header.bg-dark {
+    background-color: #121212 !important;
+    border-bottom: 2px solid #FFD700;
+    color: #FFD700 !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: #FFD700;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+    background-color: #2a2a2a !important;
+    padding: 10px;
+}
+
+/* Tables */
+.table {
+    color: #fff;
+    border-color: #333;
+    background-color: #1e1e1e !important;
+}
+
+.table thead th {
+    background-color: #121212;
+    border-bottom: 2px solid #FFD700;
+    color: #FFD700;
+    font-weight: 500;
+}
+
+.table tbody tr {
+    background-color: #1e1e1e !important;
+}
+
+.table tbody tr:hover {
+    background-color: #2a2a2a !important;
+}
+
+.table tbody td {
+    border-color: #333;
+    vertical-align: middle;
+    background-color: #1e1e1e !important;
+}
+
+.table td, .table th {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+.table tfoot tr {
+    background-color: #1e1e1e !important;
+}
+
+.table tfoot td {
+    background-color: #1e1e1e !important;
+    border-color: #333;
+}
+
+/* Product grid */
+.text-primary {
+    color: #FFD700 !important;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+/* Form controls */
+.form-control {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.form-control:focus {
+    background-color: #333;
+    border-color: #FFD700;
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    color: #fff;
+}
+
+.form-label {
+    color: #ddd;
+    font-weight: 500;
+}
+
+.input-group-text {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #ddd;
+}
+
+/* Stripe Elements */
+#card-element {
+    background-color: #333;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+/* Footer */
+footer {
+    background-color: #121212 !important;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+/* Alert messages */
+.alert-success {
+    background-color: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+/* Order confirmation */
+.display-1 {
+    color: #FFD700;
+}
+
+/* Responsive images */
+img.img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #2a2a2a !important;
+    padding: 5px;
+}
+
+/* Payment page */
+.text-danger {
+    color: #ff6b6b !important;
+}
+
+/* Checkout flow */
+.fs-3 {
+    color: #FFD700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Text colors */
+.text-muted {
+    color: #999 !important;
+}
+
+/* Bootstrap Icons */
+.bi {
+    margin-right: 0.3rem;
+}
+
+/* Make general text content white */
+p, .card-text, span {
+    color: #ffffff !important;
+}
+
+/* Fix card text and descriptions */
+.card-body p {
+    color: #f0f0f0 !important;
+}
+
+/* Keep price in gold but make descriptions white */
+.card-text.text-primary, .fs-3.text-primary, .fw-bold .text-primary, .text-primary {
+    color: #FFD700 !important;
+}
+
+/* Fix form labels */
+.form-label {
+    color: #ffffff !important;
+}
+
+/* Fix input text */
+.form-control {
+    color: #ffffff !important;
+}
+
+/* Fix small text */
+small.text-muted {
+    color: #aaaaaa !important;
+}
+
+/* Make product details text white */
+.col-md-6 p:not(.fs-3) {
+    color: #ffffff !important;
+}
+
+/* Fix order summary text */
+.card-body span:not(.text-primary) {
+    color: #ffffff !important;
+}
+
+/* Fix paragraph text in empty cart message */
+.text-center p {
+    color: #ffffff !important;
+}
+
+/* Fix for product images in cart */
+.align-middle img {
+    background-color: #2a2a2a !important;
+    border: 1px solid #333 !important;
+    padding: 3px;
+}
+
+/* Make sure all product images have consistent styling */
+img.img-fluid, .card img, .table img {
+    background-color: #2a2a2a !important;
+    border: 1px solid #333 !important;
+}
+
+/* Add subtle product image hover effect */
+.card:hover img {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+/* Fix specific cart product images */
+.d-flex.align-items-center img {
+    background-color: #2a2a2a !important;
+    border: 1px solid #333 !important;
+    padding: 5px;
+}
+
+/* Style product thumbnails consistently */
+td.align-middle .d-flex img {
+    background-color: #2a2a2a !important;
+    border-radius: 6px !important;
+    border: 1px solid #444 !important;
+    padding: 4px;
+}
+
+/* Fix table responsive background */
+.table-responsive {
+    background-color: #1e1e1e !important;
+}
+
+/* Ensure table has proper background even on mobile */
+@media (max-width: 768px) {
+    .table, .table-responsive {
+        background-color: #1e1e1e !important;
+    }
+    
+    .table tr, .table td, .table th {
+        background-color: #1e1e1e !important;
+    }
+}

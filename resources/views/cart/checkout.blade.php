@@ -3,14 +3,14 @@
 @section('title', 'Checkout')
 
 @section('content')
-    <h1 class="mb-4">Checkout</h1>
+    <h1 class="mb-4"><i class="bi bi-bag-check"></i> Checkout</h1>
     
     @if(session()->has('cart') && count(session('cart')) > 0)
         <div class="row">
             <div class="col-md-7">
                 <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Shipping Information</h5>
+                    <div class="card-header bg-primary">
+                        <h5 class="mb-0"><i class="bi bi-geo-alt"></i> Shipping Information</h5>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('order.process') }}" method="POST">
@@ -40,7 +40,9 @@
                             </div>
                             
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-success btn-lg">Complete Order</button>
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="bi bi-check-circle"></i> Complete Order
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -48,8 +50,8 @@
             </div>
             <div class="col-md-5">
                 <div class="card">
-                    <div class="card-header bg-dark text-white">
-                        <h5 class="mb-0">Order Summary</h5>
+                    <div class="card-header bg-dark">
+                        <h5 class="mb-0"><i class="bi bi-receipt"></i> Order Summary</h5>
                     </div>
                     <div class="card-body">
                         @php
@@ -84,7 +86,7 @@
                         
                         <div class="d-flex justify-content-between fw-bold">
                             <span>Total</span>
-                            <span>${{ number_format($total, 2) }}</span>
+                            <span class="text-primary">${{ number_format($total, 2) }}</span>
                         </div>
                     </div>
                 </div>
@@ -98,10 +100,13 @@
         </div>
     @else
         <div class="text-center py-5">
+            <div class="mb-4">
+                <i class="bi bi-cart-x" style="font-size: 4rem; color: #666;"></i>
+            </div>
             <h3>Your cart is empty</h3>
             <p class="mb-4">You need to add items to your cart before checking out.</p>
             <a href="{{ route('shop.index') }}" class="btn btn-primary">
-                <i class="bi bi-cart-plus"></i> Browse Products
+                <i class="bi bi-grid-3x3-gap-fill"></i> Browse Products
             </a>
         </div>
     @endif
