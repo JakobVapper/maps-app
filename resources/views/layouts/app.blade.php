@@ -18,6 +18,9 @@
         <!-- Custom Blog Theme -->
         <link href="{{ asset('css/blog-theme.css') }}" rel="stylesheet">
         
+        <!-- Custom Games Theme -->
+        <link href="{{ asset('css/games-theme.css') }}" rel="stylesheet">
+        
         <style>
             body {
                 font-family: 'Poppins', sans-serif;
@@ -51,15 +54,41 @@
                 transform: translateY(-5px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4) !important;
             }
+            
+            /* Dark theme overrides for games section */
+            .dark {
+                --bg-opacity: 1;
+                background-color: #121212;
+                color: #e4e4e4;
+            }
+            
+            .dark .bg-white {
+                --bg-opacity: 1;
+                background-color: #1e1e1e !important;
+            }
+            
+            .dark .shadow {
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+            }
+            
+            .dark .text-gray-800 {
+                --text-opacity: 1;
+                color: #e4e4e4 !important;
+            }
+            
+            .dark .border-gray-200 {
+                --border-opacity: 1;
+                border-color: #333333 !important;
+            }
         </style>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white shadow">
+                <header class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>

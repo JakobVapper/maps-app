@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MarkerController;
 use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\GameViewController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,14 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admi
     Route::get('/comments', [AdminPostController::class, 'comments'])->name('comments');
     Route::delete('/comments/{comment}', [AdminPostController::class, 'destroyComment'])->name('comments.destroy');
 });
+
+Route::get('/games', [App\Http\Controllers\GameViewController::class, 'index'])->name('games.index');
+Route::get('/games/create', [App\Http\Controllers\GameViewController::class, 'create'])->middleware(['auth'])->name('games.create');
+Route::post('/games', [App\Http\Controllers\GameViewController::class, 'store'])->middleware(['auth'])->name('games.store');
+Route::get('/games/{id}', [App\Http\Controllers\GameViewController::class, 'show'])->name('games.show');
+Route::get('/games/{id}/edit', [App\Http\Controllers\GameViewController::class, 'edit'])->middleware(['auth'])->name('games.edit');
+Route::put('/games/{id}', [App\Http\Controllers\GameViewController::class, 'update'])->middleware(['auth'])->name('games.update');
+Route::delete('/games/{id}', [App\Http\Controllers\GameViewController::class, 'destroy'])->middleware(['auth'])->name('games.destroy');
 
 Route::resource('posts', PostController::class)->only(['index', 'show']);
 
