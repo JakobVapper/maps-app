@@ -51,8 +51,7 @@
                     </div>
                 @endforeach
             </div>
-            
-            <!-- External Subjects API Data -->
+             
             <div class="mt-16 pt-8 border-t-4 border-yellow-500 dark:border-yellow-700">
                 <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
                     <span class="inline-block bg-gradient-to-r from-yellow-500 to-yellow-300 text-black px-4 py-1 rounded-lg mr-2">
@@ -73,20 +72,37 @@
                 @else
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         @foreach($subjects as $subject)
-                            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-lg p-5 border border-gray-700 hover:border-yellow-500 transition-all">
-                                <h3 class="font-bold text-lg text-yellow-500 mb-2">{{ $subject['name'] ?? 'Unnamed Subject' }}</h3>
-                                @if(isset($subject['description']))
-                                    <p class="text-gray-300 text-sm mb-3">{{ Str::limit($subject['description'], 100) }}</p>
+                            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700 hover:border-yellow-500 transition-all">
+                                <!-- Image section -->
+                                @if(isset($subject['image']))
+                                    <div class="w-full h-48 overflow-hidden">
+                                        <img src="{{ $subject['image'] }}" alt="{{ $subject['name'] ?? 'Subject Image' }}" 
+                                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                                    </div>
+                                @else
+                                    <div class="w-full h-24 bg-gray-800 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
                                 @endif
-                                <div class="flex justify-between items-center mt-4 pt-2 border-t border-gray-700">
-                                    @if(isset($subject['credits']))
-                                        <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded font-bold">
-                                            Credits: {{ $subject['credits'] }}
-                                        </span>
+                                
+                                <!-- Content section -->
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-yellow-500 mb-2">{{ $subject['name'] ?? 'Unnamed Subject' }}</h3>
+                                    @if(isset($subject['description']))
+                                        <p class="text-gray-300 text-sm mb-3">{{ Str::limit($subject['description'], 100) }}</p>
                                     @endif
-                                    @if(isset($subject['id']))
-                                        <span class="text-xs text-gray-500">#{{ $subject['id'] }}</span>
-                                    @endif
+                                    <div class="flex justify-between items-center mt-4 pt-2 border-t border-gray-700">
+                                        @if(isset($subject['credits']))
+                                            <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded font-bold">
+                                                Credits: {{ $subject['credits'] }}
+                                            </span>
+                                        @endif
+                                        @if(isset($subject['id']))
+                                            <span class="text-xs text-gray-500">#{{ $subject['id'] }}</span>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
