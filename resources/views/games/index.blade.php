@@ -27,7 +27,7 @@
                 @foreach ($games as $game)
                     <div class="game-card">
                         <div class="game-card-image">
-                            <img src="{{ $game->image }}" alt="{{ $game->title }}">
+                            <img src="{{ asset($game->image) }}" alt="{{ $game->title }}">
                             @if($game->publisher)
                                 <div class="game-badge">{{ $game->publisher }}</div>
                             @endif
@@ -50,6 +50,48 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            
+            <!-- External Subjects API Data -->
+            <div class="mt-16 pt-8 border-t-4 border-yellow-500 dark:border-yellow-700">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+                    <span class="inline-block bg-gradient-to-r from-yellow-500 to-yellow-300 text-black px-4 py-1 rounded-lg mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        External Subjects
+                    </span>
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">
+                        (from hajusrakendus.tak22jasin.itmajakas.ee)
+                    </span>
+                </h2>
+                
+                @if(empty($subjects))
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 text-center">
+                        <p class="text-gray-600 dark:text-gray-300">No subject data available from the external API.</p>
+                    </div>
+                @else
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        @foreach($subjects as $subject)
+                            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-lg p-5 border border-gray-700 hover:border-yellow-500 transition-all">
+                                <h3 class="font-bold text-lg text-yellow-500 mb-2">{{ $subject['name'] ?? 'Unnamed Subject' }}</h3>
+                                @if(isset($subject['description']))
+                                    <p class="text-gray-300 text-sm mb-3">{{ Str::limit($subject['description'], 100) }}</p>
+                                @endif
+                                <div class="flex justify-between items-center mt-4 pt-2 border-t border-gray-700">
+                                    @if(isset($subject['credits']))
+                                        <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded font-bold">
+                                            Credits: {{ $subject['credits'] }}
+                                        </span>
+                                    @endif
+                                    @if(isset($subject['id']))
+                                        <span class="text-xs text-gray-500">#{{ $subject['id'] }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     </div>

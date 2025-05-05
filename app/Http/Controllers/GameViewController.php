@@ -5,13 +5,29 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 
 class GameViewController extends Controller
 {
     public function index()
     {
         $games = Game::all();
-        return view('games.index', compact('games'));
+        
+        // Fetch external subjects API data with 15-minute cache
+        $subjects = Cache::remember('external_subjects', 900, function () {
+            try {
+                $response = Http::timeout(5)->get('https://hajusrakendus.tak22jasin.itmajakas.ee/api/subjects');
+                if ($response->successful()) {
+                    return $response->json();
+                }
+                return [];
+            } catch (\Exception $e) {
+                return [];
+            }
+        });
+        
+        return view('games.index', compact('games', 'subjects'));
     }
     
     public function show($id)
